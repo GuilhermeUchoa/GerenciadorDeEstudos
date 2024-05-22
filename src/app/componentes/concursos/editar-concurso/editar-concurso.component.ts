@@ -19,9 +19,9 @@ export class EditarConcursoComponent {
 
   id: any
   concurso: any = {
-    "id":"",
-    "nome":"",
-    "materias":[]
+    "id": "",
+    "nome": "",
+    "materias": []
   }
 
   constructor(
@@ -35,6 +35,14 @@ export class EditarConcursoComponent {
     this._ConcursoService.getConcurso(this.id).subscribe((data) => {
       this.concurso = data
     })
-  
+
   }
+
+  excluir(): void {
+    this._ConcursoService.excluirConcurso(this.id).subscribe((data)=>{
+      alert('Este concurso sera excluido!!!')
+      this._Router.navigate(['/'])
+    })
+  }
+
 }

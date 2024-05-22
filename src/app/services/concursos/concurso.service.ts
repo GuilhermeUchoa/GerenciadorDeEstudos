@@ -30,4 +30,9 @@ export class ConcursoService {
     return this._HttpClient.put<Concurso>(linkEditar,concurso)
   }
 
+  excluirConcurso(id:any):Observable<Concurso>{
+    let linkExcluir:string = `${this.linkApi}/${id}`
+    return this._HttpClient.delete<Concurso>(linkExcluir)
+  }
+
 }
