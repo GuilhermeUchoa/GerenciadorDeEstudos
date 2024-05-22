@@ -1,7 +1,7 @@
 export interface Concurso {
 
     "id"?: string,
-    "nome": string,
+    "nome"?: string,
     "materias"?: Array<any>
 
 }

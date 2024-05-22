@@ -1,3 +1,7 @@
+# Motivacao
+
+Estou criando este projeto para me auxiliar na organizaçao de meus estudos para concurso público e estudos de interesse pessoal.
+
 # GerenciadorDeEstudos
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.4.

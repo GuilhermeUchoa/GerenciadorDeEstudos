@@ -20,4 +20,14 @@ export class ConcursoService {
     return this._HttpClient.post<Concurso>(this.linkApi, concurso)
   }
 
+  getConcurso(id:any): Observable<Concurso[]> {
+    let linkGetConcurso:string = `${this.linkApi}/${id}`
+    return this._HttpClient.get<Concurso[]>(linkGetConcurso)
+  }
+
+  editarConcurso(id:any, concurso:Concurso):Observable<Concurso>{
+    let linkEditar:string = `${this.linkApi}/${id}`
+    return this._HttpClient.put<Concurso>(linkEditar,concurso)
+  }
+
 }

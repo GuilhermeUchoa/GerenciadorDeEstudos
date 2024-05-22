@@ -8,7 +8,7 @@ export const routes: Routes = [
 
     { path: '', component: ListarConcursoComponent },
     { path: 'concursoCriar', component: CriarConcursoComponent },
-    { path: 'concursoEditar', component: EditarConcursoComponent },
+    { path: 'concursoEditar/:id', component: EditarConcursoComponent },
     { path: 'concursoRemover', component: RemoverConcursoComponent }
 
 
