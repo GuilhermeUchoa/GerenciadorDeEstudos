@@ -1,0 +1,70 @@
+@for (concurso of concursos; track $index) {
+<mat-card>
+
+    <mat-card-header>
+        <mat-card-title>
+            <h3>{{concurso.nome | titlecase}}</h3>
+        </mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+    </mat-card-header>
+    <br>
+
+    <mat-card-content>
+
+        <div class="container">
+            <div class="row">
+
+
+                @for (materia of concurso.materias; track $index) {
+
+                    <div class="col-2">
+
+                        <mat-card class="example-card">
+
+                            <mat-card-header>
+                                <mat-card-title>{{materia.nome | titlecase}}</mat-card-title>
+                                <mat-card-subtitle>Peso: {{materia.peso}}</mat-card-subtitle>
+                            </mat-card-header>
+
+                            <br>
+                            <mat-card-content>
+                                <p>{{materia.comentario}}</p>
+                            </mat-card-content>
+                            <br>
+
+                            <mat-divider></mat-divider>
+
+                            <mat-card-actions align="start">
+                                <button mat-button>Editar</button>
+                                <button mat-button>Remover</button>
+                            </mat-card-actions>
+
+                            <mat-card-footer>
+                            </mat-card-footer>
+
+                        </mat-card>
+                        <br>
+                    </div>
+                    
+                }
+
+            </div>
+        </div>
+
+
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+        <button mat-button>+Materias</button>
+        <button mat-button>+Editar</button>
+    </mat-card-actions>
+
+</mat-card>
+<br><br>
+}
+
+<mat-card>
+    <mat-card-actions align="end">
+        <button mat-button routerLink="/concursoCriar">+ Concurso</button>
+    </mat-card-actions>
+</mat-card>
