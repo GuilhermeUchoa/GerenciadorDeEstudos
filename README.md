@@ -1,6 +1,10 @@
 # Motivacao
 
 Estou criando este projeto para me auxiliar na organizaçao de meus estudos para concurso público e estudos de interesse pessoal.
+[x] - CRUD básico
+[x] - criar o add materias
+[] - melhorar o add materias
+[] - criar cronometro
 
 # GerenciadorDeEstudos
 

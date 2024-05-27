@@ -10,6 +10,13 @@
           "peso": "12",
           "tempo": 0,
           "comentario": "mudando comentario"
+        },
+        {
+          "id": "",
+          "nome": "Direito Penal",
+          "peso": "2",
+          "tempo": 0,
+          "comentario": "Muito importante por mais que nos ultimos concursos da PF cairam poucas vezes, vale a pena estudar, mas nao perca o foco em informatica e contabilidade"
         }
       ]
     },
@@ -39,14 +46,14 @@
       "materias": [
         {
           "id": "",
-          "nome": "Portugues",
+          "nome": "Português",
           "peso": 1,
           "tempo": 0,
           "comentario": "É necessario ter cuidado com o porgues da FGV, não é um conteudo muito simples.\nAgora estou pegando apenas os 100 primeiros caracteres. É um teste para ver até onde vai o comentario, se essa quantidade de string atapalha a estetica do front end."
         },
         {
           "id": "",
-          "nome": "contabilidade",
+          "nome": "Contabilidade",
           "peso": "2",
           "tempo": 0,
           "comentario": "Contabilidade &#233; uma materia dificil aten&#231;ao deu certo"
@@ -54,16 +61,16 @@
         {
           "id": "",
           "nome": "Direito Tributario",
-          "peso": 1,
+          "peso": "2",
           "tempo": 0,
           "comentario": "Direito tributario &#233; extremamente chato no inicio porem &#233; pequeno logo da para aprender tipo contabilidade no inicio, muito decoreba mas logo faz sentido de tanto tentar se adaptar<div><br></div><div><br></div>"
         },
         {
           "id": "",
           "nome": "Economia",
-          "peso": 1,
+          "peso": "2",
           "tempo": 0,
-          "comentario": ""
+          "comentario": "Economia &#233; um materia do capiroto, aten&#231;ao ao estudar<div>escreva seus resumos rapidos aqui:</div><div><ol><li>standalone</li></ol></div>"
         },
         {
           "id": "",
@@ -71,6 +78,13 @@
           "peso": 1,
           "tempo": 0,
           "comentario": ""
+        },
+        {
+          "id": "",
+          "nome": "Direito Administrativo",
+          "peso": "1",
+          "tempo": 0,
+          "comentario": "Materia muito boa de se estudar"
         }
       ],
       "comentario": "Concurso Final&#10;salario: 25 mil inicial&#160;<div>carga de trabalho: BOA&#160;</div><div>Cargo Nobre&#10;</div><div><br></div>"

@@ -58,7 +58,7 @@
     </mat-card-content>
 
     <mat-card-actions align="end">
-        <button mat-button>+Materias</button>
+        <button mat-button (click)="criarMateria(concurso.id)">+Materias</button>
         <button mat-button routerLink="/concursoEditar/{{concurso.id}}">+Editar</button>
     </mat-card-actions>
 
