@@ -17,14 +17,9 @@
           </mat-panel-title>
 
         </mat-expansion-panel-header>
-
         <fieldset class="mb-3 row">
-          <legend class="col-form-legend col-4">
-            Informações sobre este concurso
-          </legend>
-          <div class="col-8">
-            <textarea name="" id="" cols="100" rows="8" style="text-align: center;" name="inputConcursoComentario" [(ngModel)]="concurso.comentario"></textarea>
-          </div>
+          <legend class="col-form-legend col-4">Informações sobre este concurso</legend>
+          <angular-editor [placeholder]="'Jot something down...'" name="concursoComentario" [(ngModel)]="concurso.comentario"></angular-editor>
         </fieldset>
 
       </mat-expansion-panel>
@@ -48,8 +43,7 @@
         Peso: <input type="text" class="form-control" name="inputMateriaName{{materia.peso}}" [(ngModel)]="materia.peso"
           style="text-align: center; width: 110px; ; position: relative;" />
         <br>
-        <textarea name="" id="" cols="167" rows="7" name="inputMateriaName{{materia.comentario}}"
-          [(ngModel)]="materia.comentario" style="text-align: center;"></textarea>
+        <angular-editor [placeholder]="'Jot something down...'"  name="inputMateriaName{{materia.nome}}{{$index}}" [(ngModel)]="materia.comentario"></angular-editor>
         <br>
       </mat-expansion-panel>
     </mat-accordion>
@@ -69,3 +63,4 @@
   style="width: 80px; position: absolute; bottom: 0px; right: 10px;">
   <mat-icon>delete</mat-icon>
 </button>
+

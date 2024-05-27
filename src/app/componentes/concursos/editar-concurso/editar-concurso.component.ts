@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
@@ -12,6 +12,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
+import { HttpClientModule} from '@angular/common/http';
+import { AngularEditorModule } from 'editor-angular-wysiwyg';
 
 @Component({
   selector: 'app-editar-concurso',
@@ -24,7 +26,9 @@ import { MatButtonModule } from '@angular/material/button';
     MatExpansionModule,
     MatButtonModule,
     MatDividerModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule,
+    AngularEditorModule
   ],
   templateUrl: './editar-concurso.component.html',
   styleUrl: './editar-concurso.component.css'
@@ -46,7 +50,7 @@ export class EditarConcursoComponent {
   concurso: any = {
     "id": "",
     "nome": "",
-    "comentario":"",
+    "comentario": "",
     "materias": []
   }
 
@@ -54,10 +58,11 @@ export class EditarConcursoComponent {
   constructor(
     private _ConcursoService: ConcursoService,
     private _Router: Router,
-    private _ActivatedRoute: ActivatedRoute
+    private _ActivatedRoute: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
+
     this.id = this._ActivatedRoute.snapshot.paramMap.get("id")
     this._ConcursoService.getConcurso(this.id).subscribe((data) => {
       this.concurso = data
@@ -65,6 +70,8 @@ export class EditarConcursoComponent {
     })
 
   }
+
+
 
   excluir(): void {
     this._ConcursoService.excluirConcurso(this.id).subscribe((data) => {
