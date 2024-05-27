@@ -1,7 +1,64 @@
-<form>
-    
-    <input type="text" name="nomeNovoConcurso" [(ngModel)]="nomeNovoConcurso.nome" placeholder="Digite o nome do novo concurso" style="width: 400px;">
-    
-    <button mat-flat-button (click)="adicionarNovoConcurso()">Adicionar novo concurso</button>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Criar um novo concurso</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
 
-</form>
+        <!-- Form Concurso -->
+        <form #fCon="ngForm" (ngSubmit)="adicionarNovoConcurso(fCon)">
+            <div>
+                <mat-card-subtitle>Nome</mat-card-subtitle>
+                <input type="text" name="novoConcursoNome" ngModel required minlength="3" style="width: 400px;">
+                
+                    @if(fCon.controls['novoConcursoNome'].errors?.['required'] && fCon.controls['novoConcursoNome'].touched){
+                        <br>
+                        <span style="color:red; font-size: small;">*Este campo é obrigatorio</span>
+                    }
+                    @if(fCon.controls['novoConcursoNome'].errors?.['minlength'] && fCon.controls['novoConcursoNome'].touched){
+                        <br>
+                        <span style="color:red; font-size: small;">*Nome deve ter no mínimo 3 caracteres</span>
+                    }
+       
+        
+            </div>
+            <button type="submit" mat-flat-button>+ add novo concurso</button>
+        </form>
+
+        <!-- Form Materias -->
+        <form #fMat="ngForm" (ngSubmit)="addMateria(fMat)">
+            <hr>
+            <mat-card-title>Novas materias</mat-card-title>
+            <div>
+                <mat-card-subtitle>Materias</mat-card-subtitle>
+                <input type="text" name="materiaNome" ngModel required minlength="3" style="width: 400px;">
+                @if(fMat.controls['materiaNome'].errors?.['required'] && fMat.controls['materiaNome'].touched){
+                    <br>
+                    <span style="color:red; font-size: small;">*Se voce quer adicionar materias este campo é obrigatorio</span>
+                }
+
+                <mat-card-subtitle>Peso</mat-card-subtitle>
+                <input type="number" name="materiaPeso" ngModel minlength="1" required style="width: 60px;">
+                @if(fMat.controls['materiaPeso'].errors?.['required'] && fMat.controls['materiaPeso'].touched){
+                    <br>
+                    <span style="color:red; font-size: small;">*O peso minimo é 1</span>
+                }
+
+                <mat-card-subtitle>Comentarios</mat-card-subtitle>
+                <textarea name="" id="" cols="47" rows="7" name="materiaComentario" ngModel></textarea>
+
+                <button mat-flat-button>+ Add Materia</button>
+            </div>
+            <hr>
+            @for (materia of nomeNovoConcurso.materias; track $index) {
+            <div>
+                <label for="">Nome: {{materia.nome}}</label><br>
+                <label for="">Peso: {{materia.peso}}</label><br>
+                <label for="">Comentario: {{materia.comentario}}</label><br>
+            </div>
+            <hr>
+            }
+        </form>
+
+
+    </mat-card-content>
+</mat-card>

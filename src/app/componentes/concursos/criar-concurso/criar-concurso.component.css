@@ -39,3 +39,9 @@ section {
     justify-content: center;
     width: 120px;
 }
+
+.ng-touched.ng-invalid{
+    border-color: red;
+    border-width: 3px;
+
+}

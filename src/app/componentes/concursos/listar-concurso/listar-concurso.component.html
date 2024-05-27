@@ -28,15 +28,18 @@
 
                             <br>
                             <mat-card-content>
-                                <p>{{materia.comentario}}</p>
+                                @if (materia.comentario.length > 0) {
+                                    <p>{{materia.comentario.substring(0,100)}}...</p>
+
+                                }
                             </mat-card-content>
                             <br>
 
                             <mat-divider></mat-divider>
 
                             <mat-card-actions align="start">
-                                <button mat-button>Editar</button>
-                                <button mat-button>Remover</button>
+                                <button mat-button routerLink="/concursoEditar/{{concurso.id}}">Editar</button>
+                                
                             </mat-card-actions>
 
                             <mat-card-footer>
