@@ -17,6 +17,13 @@
           "peso": "2",
           "tempo": 0,
           "comentario": "Muito importante por mais que nos ultimos concursos da PF cairam poucas vezes, vale a pena estudar, mas nao perca o foco em informatica e contabilidade"
+        },
+        {
+          "id": "",
+          "nome": "Contabilidade",
+          "peso": 1,
+          "tempo": 0,
+          "comentario": "Materia bem longa com muito detalhe, aprenda a logica para ter sucesso"
         }
       ]
     },
@@ -85,6 +92,13 @@
           "peso": "1",
           "tempo": 0,
           "comentario": "Materia muito boa de se estudar"
+        },
+        {
+          "id": "",
+          "nome": "AFO",
+          "peso": 1,
+          "tempo": 0,
+          "comentario": "AFO &#233; uma materia muito odiada pelos concurseiros, decore ela pois &#233; vantagem !!!"
         }
       ],
       "comentario": "Concurso Final&#10;salario: 25 mil inicial&#160;<div>carga de trabalho: BOA&#160;</div><div>Cargo Nobre&#10;</div><div><br></div>"

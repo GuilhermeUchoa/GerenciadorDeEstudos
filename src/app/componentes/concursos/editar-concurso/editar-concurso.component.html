@@ -2,16 +2,16 @@
 
 <div class="container">
   <form>
-    <h2 >Concurso</h2>
+    <h2>Concurso</h2>
     <mat-accordion>
-      <mat-expansion-panel  (opened)="panelOpenState = true" (closed)="panelOpenState = false" >
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
         <mat-expansion-panel-header>
           <mat-panel-title>
             <span>ID:</span> <input type="text" class="form-control" name="inputConcursoId" [(ngModel)]="concurso.id"
-              style="width: 200px; position: relative; left: 10px; text-align: center;"  />
+              style="width: 200px; position: relative; left: 10px; text-align: center;" />
 
             <span style="position: relative; left: 47px;"><b>Nome:</b></span><input type="text" class="form-control"
-              name="inputConcursoName" [(ngModel)]="concurso.nome" 
+              name="inputConcursoName" [(ngModel)]="concurso.nome"
               style="width: 800px; position: relative; left: 50px; text-align: center;" />
 
           </mat-panel-title>
@@ -19,7 +19,8 @@
         </mat-expansion-panel-header>
         <fieldset class="mb-3 row">
           <legend class="col-form-legend col-4">Informações sobre este concurso</legend>
-          <angular-editor [placeholder]="'Jot something down...'" name="concursoComentario" [(ngModel)]="concurso.comentario"></angular-editor>
+          <angular-editor [placeholder]="'Jot something down...'" name="concursoComentario"
+            [(ngModel)]="concurso.comentario"></angular-editor>
         </fieldset>
 
       </mat-expansion-panel>
@@ -28,39 +29,49 @@
 
     <h2>Materias</h2>
     @for (materia of concurso.materias; track $index) {
+      <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{$index}} <input type="text" class="form-control" name="inputMateriaName{{materia.nome}}"
+                [(ngModel)]="materia.nome" style="text-align: center; width: 1100px; left: 100px; position: absolute;" />
+            </mat-panel-title>
+            <mat-panel-description>
 
-    <mat-accordion>
-      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            {{$index}} <input type="text" class="form-control" name="inputMateriaName{{materia.nome}}"
-              [(ngModel)]="materia.nome" style="text-align: center; width: 1100px; left: 100px; position: absolute;" />
-          </mat-panel-title>
-          <mat-panel-description>
-
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        Peso: <input type="text" class="form-control" name="inputMateriaName{{materia.peso}}" [(ngModel)]="materia.peso"
-          style="text-align: center; width: 110px; ; position: relative;" />
-        <br>
-        <angular-editor [placeholder]="'Jot something down...'"  name="inputMateriaName{{materia.nome}}{{$index}}" [(ngModel)]="materia.comentario"></angular-editor>
-        <br>
-      </mat-expansion-panel>
-    </mat-accordion>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          Peso: <input type="text" class="form-control" name="inputMateriaName{{materia.peso}}" [(ngModel)]="materia.peso"
+            style="text-align: center; width: 110px; ; position: relative;" />
+          <br>
+          <angular-editor [placeholder]="'Jot something down...'" name="inputMateriaName{{materia.nome}}{{$index}}"
+            [(ngModel)]="materia.comentario"></angular-editor>
+            <br>
+            <button mat-icon-button color="warn" (click)="excluirMateria(materia.nome)" aria-label="Example icon button with a heart icon" style="position: absolute; top: 78px; right: 20px;">
+              <mat-icon>delete</mat-icon>
+            </button>
+        </mat-expansion-panel>
+      </mat-accordion>
     }
 
-    <hr>
+    <!-- Add materia -->
     <div style="text-align: center;">
+      <br>
+      <button mat-raised-button color="primary" (click)="addNovaMateria()" style="width: 200px;">+ add materia</button>
 
+    </div>
+
+
+    <hr>
+
+    <!-- botao salvar -->
+    <div style="text-align: center;">
       <button mat-flat-button color="primary" (click)="atualizar()" style="width: 200px;">Salvar</button>
-
     </div>
   </form>
 </div>
 
 <!-- Botao para exluir o concurso inteiro-->
 <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon" (click)="excluir()"
-  style="width: 80px; position: absolute; bottom: 0px; right: 10px;">
+  style="width: 80px; position: relative; bottom: 20px; left: 86vw;">
   <mat-icon>delete</mat-icon>
 </button>
-

@@ -12,7 +12,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AngularEditorModule } from 'editor-angular-wysiwyg';
 
 @Component({
@@ -85,6 +85,34 @@ export class EditarConcursoComponent {
       alert("Atualizado com sucesso!!!")
       this._Router.navigate(['/'])
     })
+
+  }
+
+  addNovaMateria(): void {
+
+    let novaMateria: Materia = {
+      id: "",
+      nome: "Nova Materia",
+      peso: 1,
+      tempo: 0,
+      comentario: ""
+    }
+
+    this.concurso.materias.push(novaMateria)
+
+   
+  }
+
+  excluirMateria(nome:any): void {
+
+    for (let index = 0; index <  this.concurso.materias.length; index++) {
+      
+      if (this.concurso.materias[index].nome == nome) {
+        this.concurso.materias.splice(index,1)
+      }
+      
+    }
+   
 
   }
 
